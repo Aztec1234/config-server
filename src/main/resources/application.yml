@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file://C:/Documents/configs
+
+  application:
+    name: config-server
+  devtools:
+    restart:
+      enabled: true
+
+  profiles:
+    include: native
+    active: local
+
+
+eureka:
+  instance:
+    secure-port-enabled: true
+    hostname: localhost
+    status-page-url: http://localhost:${server.port}/actuator/info
+    home-page-url: http://localhost:${server.port}
+    secure-port: ${server.port}
+    health-check-url: http://localhost:${server.port}/actuator/health
+    non-secure-port-enabled: false
+  client:
+    service-url:
+      default-zone: http://aztec:aztec123@localhost:8010/eureka
+server:
+  port: ${port:8012}
