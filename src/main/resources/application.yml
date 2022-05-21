@@ -27,6 +27,6 @@ eureka:
     non-secure-port-enabled: false
   client:
     service-url:
-      default-zone: http://aztec:aztec123@localhost:8010/eureka
+      defaultZone: http://aztec:aztec123@localhost:8010/eureka
 server:
   port: ${port:8012}
