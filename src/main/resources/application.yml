@@ -1,3 +1,6 @@
+server:
+  port: ${port:8012}
+
 spring:
   cloud:
     config:
@@ -11,11 +14,8 @@ spring:
     restart:
       enabled: true
 
-  profiles:
-    active: local
-
-
 eureka:
+  password: admin
   instance:
     secure-port-enabled: true
     hostname: localhost
@@ -26,6 +26,4 @@ eureka:
     non-secure-port-enabled: false
   client:
     service-url:
-      defaultZone: http://aztec:aztec123@localhost:8010/eureka
-server:
-  port: ${port:8012}
+      defaultZone: http://localhost:8010/eureka
