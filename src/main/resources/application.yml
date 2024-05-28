@@ -13,7 +13,7 @@ spring:
   devtools:
     restart:
       enabled: true
-
+#http://localhost:8012/actuator/configprops
 eureka:
   password: admin
   instance:
