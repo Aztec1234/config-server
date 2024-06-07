@@ -1,0 +1,17 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3.8-management
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"   # AMQP port
+      - "15672:15672" # HTTP management UI port
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin    # Set custom username
+      - RABBITMQ_DEFAULT_PASS=admin  # Set custom password
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq # Persist data
+
+volumes:
+  rabbitmq_data:
